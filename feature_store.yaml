@@ -1,0 +1,14 @@
+project: Feature_spark
+registry: data/registry.db
+provider: local
+offline_store:
+    type: spark
+    spark_conf:
+        spark.master: "local[*]"
+        spark.ui.enabled: "true"
+        spark.eventLog.enabled: "true"
+        spark.sql.catalogImplementation: "hive"
+        spark.sql.parser.quotedRegexColumnNames: "true"
+        spark.sql.session.timeZone: "UTC"
+online_store:
+    path: data/online_store.db
